@@ -90,7 +90,7 @@ void Animation(int value){
     }
 
         glutPostRedisplay();
-        glutTimerFunc(41,Animation, 1);
+        glutTimerFunc(41,Animation,1);
 
 }
 
@@ -250,7 +250,6 @@ void GerenciaMovim(int x, int y)
 		obsX = obsX_ini + deltax/SENS_TRANSL;
 		obsY = obsY_ini - deltay/SENS_TRANSL;
 	}
-	//else if(bot == GLUT_)
 	PosicionaObservador();
 	glutPostRedisplay();
 }
@@ -336,6 +335,7 @@ int main(void)
     glutKeyboardFunc (Teclado);
 
     glutSpecialFunc(TeclaEspecial);
+
 	glutMouseFunc(GerenciaMouse);
 
 	glutMotionFunc(GerenciaMovim);

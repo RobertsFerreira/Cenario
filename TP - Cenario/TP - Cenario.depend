@@ -284,3 +284,10 @@
 
 1592955393 d:\program files (x86)\repositorio\cenario\tp - cenario\include\drawhouses.h
 
+1593094476 source:d:\program files (x86)\repositorio\cenario\tp - cenario\main.cpp
+	<windows.h>
+	<stdlib.h>
+	<stdio.h>
+	<GL/glut.h>
+	"drawHouses.h"
+
