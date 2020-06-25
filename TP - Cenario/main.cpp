@@ -106,8 +106,6 @@ void Desenha(void)
 
     glPushMatrix();
 
-        glScalef(5, 5, 5);
-
         glPushMatrix();
             glTranslatef(Eixo, EixoY, 0);
             glColor3f(vermelhoLua, verdeLua, azulLua);
@@ -327,7 +325,7 @@ int main(void)
 
     glutInitWindowSize(1280, 720);
 
-    glutCreateWindow("Desenho de um cubo");
+    glutCreateWindow("Desenho de uma Maquete");
 
     Inicializa();
 

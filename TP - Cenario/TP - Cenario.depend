@@ -275,3 +275,12 @@
 	<stdlib.h>
 	<GL/glut.h>
 
+1592959581 source:d:\program files (x86)\repositorio\cenario\tp - cenario\src\drawhouses.cpp
+	"drawHouses.h"
+	<windows.h>
+	<stdlib.h>
+	<stdio.h>
+	<GL/glut.h>
+
+1592955393 d:\program files (x86)\repositorio\cenario\tp - cenario\include\drawhouses.h
+
