@@ -182,41 +182,41 @@ void drawHouses::drawWindow(){
 void drawHouses::drawStreet()
 {
 
-     glNormal3f(0,1,0);
+     glNormal3f(1,1,1);
 
      glBegin(GL_QUADS);
 
 	 glPushMatrix();
             glColor3f(0, 0, 0);
-            glVertex3f(-30, -2, 15);
-            glVertex3f(-30, -2, 35);
-            glVertex3f( 30, -2, 35);
-            glVertex3f( 30, -2, 15);
+            glVertex3f(-60, -2, 15);
+            glVertex3f(-60, -2, 35);
+            glVertex3f( 60, -2, 35);
+            glVertex3f( 60, -2, 15);
 
-            glVertex3f(-30, -2, 15);
-            glVertex3f(-30, -1, 15);
-            glVertex3f( 30, -1, 15);
-            glVertex3f( 30, -2, 15);
+            glVertex3f(-60, -2, 15);
+            glVertex3f( 60, -2, 15);
+            glVertex3f( 60, -1, 15);
+            glVertex3f(-60, -1, 15);
 
-            glVertex3f(-30, -2, 15);
-            glVertex3f(-30, -2, 35);
-            glVertex3f(-30, -1, 35);
-            glVertex3f(-30, -1, 15);
+            glVertex3f(-60, -2, 15);
+            glVertex3f(-60, -2, 35);
+            glVertex3f(-60, -1, 35);
+            glVertex3f(-60, -1, 15);
 
-            glVertex3f(-30, -2, 35);
-            glVertex3f( 30, -2, 35);
-            glVertex3f( 30, -1, 35);
-            glVertex3f(-30, -1, 35);
+            glVertex3f(-60, -2, 35);
+            glVertex3f( 60, -2, 35);
+            glVertex3f( 60, -1, 35);
+            glVertex3f(-60, -1, 35);
 
-            glVertex3f( 30, -2, 15);
-            glVertex3f( 30, -1, 15);
-            glVertex3f( 30, -1, 35);
-            glVertex3f( 30, -2, 35);
+            glVertex3f( 60, -2, 35);
+            glVertex3f( 60, -2, 15);
+            glVertex3f( 60, -1, 15);
+            glVertex3f( 60, -1, 35);
 
-            glVertex3f(-30, -1, 15);
-            glVertex3f(-30, -1, 35);
-            glVertex3f( 30, -1, 35);
-            glVertex3f( 30, -1, 15);
+            glVertex3f(-60, -1, 15);
+            glVertex3f(-60, -1, 35);
+            glVertex3f( 60, -1, 35);
+            glVertex3f( 60, -1, 15);
         glPopMatrix();
 
     glEnd();
@@ -271,41 +271,41 @@ void drawHouses::drawStreet()
 void drawHouses::drawFloor()
 {
 
-    glNormal3f(0,1,0);
+    glNormal3f(1,1,1);
 
 	glBegin(GL_QUADS);
 
 	 glPushMatrix();
             glColor3f(0.4, 0.4, 0.4); //Desenha passeio
-            glVertex3f(-30, -2, 10);
-            glVertex3f(-30, -2, 15);
-            glVertex3f( 30, -2, 15);
-            glVertex3f( 30, -2, 10);
+            glVertex3f(-60, -2, 10);
+            glVertex3f(-60, -2, 15);
+            glVertex3f( 60, -2, 15);
+            glVertex3f( 60, -2, 10);
 
-            glVertex3f(-30, -2, 10);
-            glVertex3f(-30,  0, 10);
-            glVertex3f( 30,  0, 10);
-            glVertex3f( 30, -2, 10);
+            glVertex3f(-60, -2, 10);
+            glVertex3f(-60,  0, 10);
+            glVertex3f( 60,  0, 10);
+            glVertex3f( 60, -2, 10);
 
-            glVertex3f(-30, -2, 10);
-            glVertex3f(-30, -2, 15);
-            glVertex3f(-30,  0, 15);
-            glVertex3f(-30,  0, 10);
+            glVertex3f(-60, -2, 10);
+            glVertex3f(-60, -2, 15);
+            glVertex3f(-60,  0, 15);
+            glVertex3f(-60,  0, 10);
 
-            glVertex3f(-30, -2, 15);
-            glVertex3f( 30, -2, 15);
-            glVertex3f( 30,  0, 15);
-            glVertex3f(-30,  0, 15);
+            glVertex3f(-60, -2, 15);
+            glVertex3f( 60, -2, 15);
+            glVertex3f( 60,  0, 15);
+            glVertex3f(-60,  0, 15);
 
-            glVertex3f( 30, -2, 10);
-            glVertex3f( 30,  0, 10);
-            glVertex3f( 30,  0, 15);
-            glVertex3f( 30, -2, 15);
+            glVertex3f( 60, -2, 10);
+            glVertex3f( 60,  0, 10);
+            glVertex3f( 60,  0, 15);
+            glVertex3f( 60, -2, 15);
 
-            glVertex3f(-30,  0, 10);
-            glVertex3f(-30,  0, 15);
-            glVertex3f( 30,  0, 15);
-            glVertex3f( 30,  0, 10);
+            glVertex3f(-60,  0, 10);
+            glVertex3f(-60,  0, 15);
+            glVertex3f( 60,  0, 15);
+            glVertex3f( 60,  0, 10);
         glPopMatrix();
 
 //----------------------------------------------
@@ -313,37 +313,37 @@ void drawHouses::drawFloor()
 
         glPushMatrix();
             glColor3f(0.36, 0.25, 0.20); //Desenha terreno do prédio
-            glVertex3f(-30, -2,-15);
-            glVertex3f(-30, -2, 10);
-            glVertex3f( 30, -2, 10);
-            glVertex3f( 30, -2,-15);
+            glVertex3f(-60, -2,-15);
+            glVertex3f(-60, -2, 10);
+            glVertex3f( 60, -2, 10);
+            glVertex3f( 60, -2,-15);
 
-            glVertex3f(-30, -2,-15);
-            glVertex3f(-30,  0,-15);
-            glVertex3f( 30,  0,-15);
-            glVertex3f( 30, -2,-15);
+            glVertex3f(-60, -2,-15);
+            glVertex3f(-60,  0,-15);
+            glVertex3f( 60,  0,-15);
+            glVertex3f( 60, -2,-15);
 
-            glVertex3f(-30, -2,-15);
-            glVertex3f(-30, -2, 10);
-            glVertex3f(-30,  0, 10);
-            glVertex3f(-30,  0,-15);
+            glVertex3f(-60, -2,-15);
+            glVertex3f(-60, -2, 10);
+            glVertex3f(-60,  0, 10);
+            glVertex3f(-60,  0,-15);
 
-            glVertex3f(-30, -2, 10);
-            glVertex3f( 30, -2, 10);
-            glVertex3f( 30,  0, 10);
-            glVertex3f(-30,  0, 10);
+            glVertex3f(-60, -2, 10);
+            glVertex3f( 60, -2, 10);
+            glVertex3f( 60,  0, 10);
+            glVertex3f(-60,  0, 10);
 
-            glVertex3f( 30, -2,-15);
-            glVertex3f( 30,  0,-15);
-            glVertex3f( 30,  0, 10);
-            glVertex3f( 30, -2, 10);
+            glVertex3f( 60, -2,-15);
+            glVertex3f( 60,  0,-15);
+            glVertex3f( 60,  0, 10);
+            glVertex3f( 60, -2, 10);
 
             glPushMatrix();
                 glColor3f(0.184314, 0.309804, 0.184314);
-                glVertex3f(-30,  0,-15);
-                glVertex3f(-30,  0, 10);
-                glVertex3f( 30,  0, 10);
-                glVertex3f( 30,  0,-15);
+                glVertex3f(-60,  0,-15);
+                glVertex3f(-60,  0, 10);
+                glVertex3f( 60,  0, 10);
+                glVertex3f( 60,  0,-15);
             glPopMatrix();
         glPopMatrix();
 
@@ -356,33 +356,33 @@ void drawHouses::drawFloor()
 	 glPushMatrix();
 
             glColor3f(0, 0, 0);
-            glVertex3f(-30, -2, 10);
-            glVertex3f(-30, -2, 15);
-            glVertex3f( 30, -2, 15);
-            glVertex3f( 30, -2, 10);
+            glVertex3f(-60, -2, 10);
+            glVertex3f(-60, -2, 15);
+            glVertex3f( 60, -2, 15);
+            glVertex3f( 60, -2, 10);
 
-            glVertex3f(-30, -2, 10);
-            glVertex3f(-30,  0, 10);
-            glVertex3f( 30,  0, 10);
-            glVertex3f( 30, -2, 10);
+            glVertex3f(-60, -2, 10);
+            glVertex3f(-60,  0, 10);
+            glVertex3f( 60,  0, 10);
+            glVertex3f( 60, -2, 10);
 
-            glVertex3f(-30, -2, 15);
-            glVertex3f(-30,  0, 15);
+            glVertex3f(-60, -2, 15);
+            glVertex3f(-60,  0, 15);
 
-            glVertex3f(-30, -2, 15);
-            glVertex3f( 30, -2, 15);
-            glVertex3f( 30,  0, 15);
-            glVertex3f(-30,  0, 15);
+            glVertex3f(-60, -2, 15);
+            glVertex3f( 60, -2, 15);
+            glVertex3f( 60,  0, 15);
+            glVertex3f(-60,  0, 15);
 
-            glVertex3f( 30, -2, 10);
-            glVertex3f( 30,  0, 10);
-            glVertex3f( 30,  0, 15);
-            glVertex3f( 30, -2, 15);
+            glVertex3f( 60, -2, 10);
+            glVertex3f( 60,  0, 10);
+            glVertex3f( 60,  0, 15);
+            glVertex3f( 60, -2, 15);
 
-            glVertex3f(-30,  0, 10);
-            glVertex3f(-30,  0, 15);
-            glVertex3f( 30,  0, 15);
-            glVertex3f( 30,  0, 10);
+            glVertex3f(-60,  0, 10);
+            glVertex3f(-60,  0, 15);
+            glVertex3f( 60,  0, 15);
+            glVertex3f( 60,  0, 10);
 
         glPopMatrix();
 
@@ -392,34 +392,34 @@ void drawHouses::drawFloor()
         glPushMatrix();
 
             glColor3f(0, 0, 0);
-            glVertex3f(-30, -2,-15);
-            glVertex3f(-30, -2, 10);
-            glVertex3f( 30, -2, 10);
-            glVertex3f( 30, -2,-15);
+            glVertex3f(-60, -2,-15);
+            glVertex3f(-60, -2, 10);
+            glVertex3f( 60, -2, 10);
+            glVertex3f( 60, -2,-15);
 
-            glVertex3f(-30, -2,-15);
-            glVertex3f(-30,  0,-15);
-            glVertex3f( 30,  0,-15);
-            glVertex3f( 30, -2,-15);
+            glVertex3f(-60, -2,-15);
+            glVertex3f(-60,  0,-15);
+            glVertex3f( 60,  0,-15);
+            glVertex3f( 60, -2,-15);
 
-            glVertex3f(-30, -2,-15);
-            glVertex3f(-30, -2, 10);
-            glVertex3f(-30,  0, 10);
+            glVertex3f(-60, -2,-15);
+            glVertex3f(-60, -2, 10);
+            glVertex3f(-60,  0, 10);
 
-            glVertex3f(-30, -2, 10);
-            glVertex3f( 30, -2, 10);
-            glVertex3f( 30,  0, 10);
-            glVertex3f(-30,  0, 10);
+            glVertex3f(-60, -2, 10);
+            glVertex3f( 60, -2, 10);
+            glVertex3f( 60,  0, 10);
+            glVertex3f(-60,  0, 10);
 
-            glVertex3f( 30, -2,-15);
-            glVertex3f( 30,  0,-15);
-            glVertex3f( 30,  0, 10);
-            glVertex3f( 30, -2, 10);
+            glVertex3f( 60, -2,-15);
+            glVertex3f( 60,  0,-15);
+            glVertex3f( 60,  0, 10);
+            glVertex3f( 60, -2, 10);
 
-            glVertex3f(-30,  0,-15);
-            glVertex3f(-30,  0, 10);
-            glVertex3f( 30,  0, 10);
-            glVertex3f( 30,  0,-15);
+            glVertex3f(-60,  0,-15);
+            glVertex3f(-60,  0, 10);
+            glVertex3f( 60,  0, 10);
+            glVertex3f( 60,  0,-15);
 
         glPopMatrix();
 
@@ -432,7 +432,7 @@ void drawHouses::drawTree(){
 
     glPushMatrix();
         glScalef(0.5, 0.5, 0.5);
-        glTranslatef(-33, 6, 0);
+        glTranslatef(-43, 6, 0);
         glPushMatrix();
             glColor3f(0.184314, 0.309804, 0.184314);
             glRotatef(-90, 1, 0, 0);
@@ -500,7 +500,7 @@ drawHouses::drawHouses()
     predio.vertices[5].y =  30;  //5 superior direito
     predio.vertices[5].z = -10;  //5 de trás.
 
-    predio.vertices[6].x =  10;  //6 canto superior direito frente.
+    predio.vertices[6].x =  10;  //6 canto
     predio.vertices[6].y =  30;  //6 superior direito
     predio.vertices[6].z =  10;  //6 da frente.
 
@@ -518,9 +518,9 @@ drawHouses::drawHouses()
 
     predio.faces[1].total = 4;
     predio.faces[1].ind[0] = 0;   //Parte Traseira
-    predio.faces[1].ind[1] = 1;   //Parte Traseira
+    predio.faces[1].ind[1] = 4;   //Parte Traseira
     predio.faces[1].ind[2] = 5;   //Parte Traseira
-    predio.faces[1].ind[3] = 4;   //Parte Traseira
+    predio.faces[1].ind[3] = 1;   //Parte Traseira
 
     predio.faces[2].total = 4;
     predio.faces[2].ind[0] = 0;   //Lado Esquerdo
@@ -535,10 +535,10 @@ drawHouses::drawHouses()
     predio.faces[3].ind[3] = 7;   //Lado Frontal
 
     predio.faces[4].total = 4;
-    predio.faces[4].ind[0] = 1;   //Lado Direito
-    predio.faces[4].ind[1] = 5;   //Lado Direito
-    predio.faces[4].ind[2] = 6;   //Lado Direito
-    predio.faces[4].ind[3] = 2;   //Lado Direito
+    predio.faces[4].ind[0] = 2;   //Lado Direito
+    predio.faces[4].ind[1] = 1;   //Lado Direito
+    predio.faces[4].ind[2] = 5;   //Lado Direito
+    predio.faces[4].ind[3] = 6;   //Lado Direito
 
     predio.faces[5].total = 4;
     predio.faces[5].ind[0] = 4;   //Topo
@@ -570,9 +570,9 @@ drawHouses::drawHouses()
     janela.faces = new FACE[1];
     janela.faces[0].total = 4;
     janela.faces[0].ind[0] = 0;
-    janela.faces[0].ind[1] = 1;
+    janela.faces[0].ind[1] = 3;
     janela.faces[0].ind[2] = 2;
-    janela.faces[0].ind[3] = 3;
+    janela.faces[0].ind[3] = 1;
     janela.TotalDeFaces = 1;
 
 
@@ -598,9 +598,9 @@ drawHouses::drawHouses()
     porta.faces = new FACE[1];
     porta.faces[0].total = 4;
     porta.faces[0].ind[0] = 0;
-    porta.faces[0].ind[1] = 1;
+    porta.faces[0].ind[1] = 3;
     porta.faces[0].ind[2] = 2;
-    porta.faces[0].ind[3] = 3;
+    porta.faces[0].ind[3] = 1;
     porta.TotalDeFaces = 1;
 
 //---------------------------------------------------------
@@ -625,9 +625,9 @@ drawHouses::drawHouses()
     vidro.faces = new FACE[1];
     vidro.faces[0].total = 4;
     vidro.faces[0].ind[0] = 0;
-    vidro.faces[0].ind[1] = 1;
+    vidro.faces[0].ind[1] = 3;
     vidro.faces[0].ind[2] = 2;
-    vidro.faces[0].ind[3] = 3;
+    vidro.faces[0].ind[3] = 1;
     vidro.TotalDeFaces = 1;
 
 //---------------------------------------------------------
@@ -652,9 +652,9 @@ drawHouses::drawHouses()
     vidroPorta.faces = new FACE[1];
     vidroPorta.faces[0].total = 4;
     vidroPorta.faces[0].ind[0] = 0;
-    vidroPorta.faces[0].ind[1] = 1;
+    vidroPorta.faces[0].ind[1] = 3;
     vidroPorta.faces[0].ind[2] = 2;
-    vidroPorta.faces[0].ind[3] = 3;
+    vidroPorta.faces[0].ind[3] = 1;
     vidroPorta.TotalDeFaces = 1;
 
 

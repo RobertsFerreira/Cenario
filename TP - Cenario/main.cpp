@@ -12,11 +12,38 @@ GLsizei  moveX = 0, moveY = 0, moveZ = 100;
 int x_ini,y_ini,bot, win = 40, panAxleX = 0, panAxleY = 0, panAxleZ = 0;
 int panObjectX = 0, panObjectY = 0, panObjectZ = 0;
 bool chave, valor = true;
-GLfloat RedCeu = 0.3, GreenCeu = 0.7, BlueCeu = 1, Eixo = 200, EixoY = 0, vermelhoLua = 1, verdeLua = 1, azulLua = 0;
+GLfloat RedCeu = 0.3, GreenCeu = 0.7, BlueCeu = 1, Eixo = 200, EixoY = 0, EixoZ = 30;
+GLfloat vermelhoLua = 1, verdeLua = 1, azulLua = 0;
 
 GLUquadricObj *quadratic;
 
 drawHouses *OneBuilding;
+
+void DefineIluminacao (void)
+{
+	GLfloat luzAmbiente[4]={0.3,0.3,0.3,1.0};
+	GLfloat luzDifusa[4]={0.2,0.2,0.2,1.0};	   // "cor"
+	GLfloat luzEspecular[4]={1.0, 1.0, 1.0, 1.0}; // "brilho"
+	GLfloat posicaoLuz[4]={Eixo, EixoY, EixoZ,0.0};
+
+	// Capacidade de brilho do material
+	GLfloat especularidade[4]={1.0,1.0,1.0,1.0};
+	GLint especMaterial=100;
+
+	// Define a refletância do material
+	glMaterialfv(GL_FRONT,GL_SPECULAR, especularidade);
+	// Define a concentração do brilho
+	glMateriali(GL_FRONT,GL_SHININESS,especMaterial);
+
+	// Ativa o uso da luz ambiente
+	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, luzAmbiente);
+
+	// Define os parâmetros da luz de número 0
+    glLightfv(GL_LIGHT0, GL_AMBIENT, luzAmbiente);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, luzDifusa);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, luzEspecular);
+	glLightfv(GL_LIGHT0, GL_POSITION, posicaoLuz);
+}
 
 
 void Animation(int value){
@@ -100,6 +127,8 @@ void Desenha(void)
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+    DefineIluminacao();
+
     glClearColor(RedCeu, GreenCeu, BlueCeu, 1.0f);
 
 	quadratic = gluNewQuadric();
@@ -107,7 +136,7 @@ void Desenha(void)
     glPushMatrix();
 
         glPushMatrix();
-            glTranslatef(Eixo, EixoY, 0);
+            glTranslatef(Eixo, EixoY, EixoZ);
             glColor3f(vermelhoLua, verdeLua, azulLua);
             OneBuilding->drawSun();
         glPopMatrix();
@@ -123,7 +152,7 @@ void Desenha(void)
         glPopMatrix();
 
         glPushMatrix();
-            glTranslatef(63, 0, 0);
+            glTranslatef(73, 0, 0);
             OneBuilding -> drawTree();
         glPopMatrix();
 
@@ -135,6 +164,13 @@ void Desenha(void)
         glPushMatrix();
          glTranslatef(30, 0, 0);
          glColor3f(0.8, 0.3, 0.5);
+         OneBuilding -> draw();
+        glPopMatrix();
+
+        glPushMatrix();
+         glTranslatef(76, 0, 0);
+         glScalef(0.8, 1.0, 1.0);
+         glColor3f(0.0, 0.0, 1.0);
          OneBuilding -> draw();
         glPopMatrix();
 
@@ -276,20 +312,6 @@ void Teclado (unsigned char key, int x, int y)
     if(key == 102)
         glutFullScreen();
 
-    if(key == 90 || key == 122) //Letra Z and z
-            win += 1;
-
-    if(key == 67 || key == 99) //Letra C and c
-            win -= 1;
-
-    if(key == 84 || key == 114){ //Letra R and r
-            win = 40;
-            rotX = rotY = rotX_ini = rotY_ini = 0;
-            obsX = obsY = obsZ = 0;
-            obsX_ini = obsY_ini = obsZ_ini = 0;
-
-    }
-
     EspecificaParametrosVisualizacao();
     glutPostRedisplay();
 }
@@ -300,6 +322,14 @@ void Inicializa (void)
 
     glClearColor(RedCeu, GreenCeu, BlueCeu, 1.0f);
     glLineWidth(2.0);
+
+    glEnable(GL_LIGHTING);
+
+    glEnable(GL_COLOR_MATERIAL);
+
+	glEnable(GL_LIGHT0);
+
+    glShadeModel(GL_SMOOTH);
 
     glEnable(GL_DEPTH_TEST);
 
