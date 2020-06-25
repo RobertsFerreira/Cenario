@@ -30,6 +30,10 @@ void DefineIluminacao (void)
 	GLfloat especularidade[4]={1.0,1.0,1.0,1.0};
 	GLint especMaterial=100;
 
+
+	// Habilita a luz de número 0
+	glEnable(GL_LIGHT0);
+
 	// Define a refletância do material
 	glMaterialfv(GL_FRONT,GL_SPECULAR, especularidade);
 	// Define a concentração do brilho
