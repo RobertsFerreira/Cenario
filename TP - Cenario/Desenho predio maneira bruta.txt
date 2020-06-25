@@ -1,0 +1,107 @@
+/*void drawHouses::drawDoor(){
+
+  glBegin(GL_LINE_LOOP); // Door
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glVertex3f(-10, -50, 40);
+    glVertex3f(-10, -75, 40);
+    glVertex3f(20, -75, 40);
+    glVertex3f(20, -50, 40);
+    glVertex3f(20, -50, 40);
+    glVertex3f(-10, -50, 40);
+  glEnd();
+
+  glBegin(GL_LINES);// The part of Door II
+    glVertex3f(5, -50, 40);
+    glVertex3f(5, -75, 40);
+  glEnd();
+
+}
+
+void drawHouses::drawWindow(int posX, int posY, int posZ){
+  glTranslatef(posX, posY,  posZ);
+  glBegin(GL_LINE_LOOP); // WINDOW
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glVertex3f(20, 55, 40);
+    glVertex3f(20, 75, 40);
+    glVertex3f(45, 75, 40);
+    glVertex3f(45, 55, 40);
+    glVertex3f(45, 55, 40);
+    glVertex3f(20, 55, 40);
+  glEnd();
+}
+
+void drawHouses::drawBuilding(){
+
+  glBegin(GL_QUADS);
+
+    glVertex3f( 60, 100,-100);
+    glVertex3f(-50, 100,-100);
+    glVertex3f(-50, 100, 40);
+    glVertex3f( 60, 100, 40);
+
+    glVertex3f( 60,-75, 40);
+    glVertex3f(-50,-75, 40);
+    glVertex3f(-50,-75,-100);
+    glVertex3f( 60,-75,-100);
+
+    glVertex3f( 60, 100, 40);
+    glVertex3f(-50, 100, 40);
+    glVertex3f(-50,-75, 40);
+    glVertex3f( 60,-75, 40);
+
+    glVertex3f( 60,-75,-100);
+    glVertex3f(-50,-75,-100);
+    glVertex3f(-50, 100,-100);
+    glVertex3f( 60, 100,-100);
+
+    glVertex3f(-50, 100, 40);
+    glVertex3f(-50, 100,-100);
+    glVertex3f(-50,-75,-100);
+    glVertex3f(-50,-75, 40);
+
+    glVertex3f( 60, 100,-100);
+    glVertex3f( 60, 100, 40);
+    glVertex3f( 60,-75, 40);
+    glVertex3f( 60,-75,-100);
+
+  glEnd();
+
+  glBegin(GL_LINE_LOOP); // building contour line
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glVertex3f(-50, 100, 40);
+    glVertex3f(-50, -75, 40);
+    glVertex3f(60, -75, 40);
+    glVertex3f(60, 100, 40);
+    glVertex3f(60, 100, 40);
+    glVertex3f(-50, 100, 40);
+  glEnd();
+
+  glBegin(GL_LINE_LOOP); // building contour line
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glVertex3f(60, 100, 40);
+    glVertex3f(60, 100, -100);
+    glVertex3f(60, 100, -100);
+    glVertex3f(60,-75, -100);
+    glVertex3f(60,-75, 40);
+  glEnd();
+
+
+}
+
+void drawHouses::draw(OBJ *object){
+
+  glTranslatef(posX, posY,  posZ);
+
+  drawBuilding();
+
+  drawWindow(0, 0, 0);
+
+  glPushMatrix();
+    drawWindow(-55, 0, 0);
+  glPopMatrix();
+
+  drawDoor();
+
+  glFlush();
+
+}*/
