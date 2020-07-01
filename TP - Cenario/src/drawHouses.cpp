@@ -187,10 +187,10 @@ void drawHouses::drawStreet()
      glBegin(GL_QUADS);
 
 	 glPushMatrix();
-            glColor3f(0, 0, 0);
+            glColor3f(0.7, 0.7, 0.7);
             glVertex3f(-60, -2, 15);
-            glVertex3f(-60, -2, 35);
-            glVertex3f( 60, -2, 35);
+            glVertex3f(-60, -2, 45);
+            glVertex3f( 60, -2, 45);
             glVertex3f( 60, -2, 15);
 
             glVertex3f(-60, -2, 15);
@@ -199,23 +199,23 @@ void drawHouses::drawStreet()
             glVertex3f(-60, -1, 15);
 
             glVertex3f(-60, -2, 15);
-            glVertex3f(-60, -2, 35);
-            glVertex3f(-60, -1, 35);
+            glVertex3f(-60, -2, 45);
+            glVertex3f(-60, -1, 45);
             glVertex3f(-60, -1, 15);
 
-            glVertex3f(-60, -2, 35);
-            glVertex3f( 60, -2, 35);
-            glVertex3f( 60, -1, 35);
-            glVertex3f(-60, -1, 35);
+            glVertex3f(-60, -2, 45);
+            glVertex3f( 60, -2, 45);
+            glVertex3f( 60, -1, 45);
+            glVertex3f(-60, -1, 45);
 
-            glVertex3f( 60, -2, 35);
+            glVertex3f( 60, -2, 45);
             glVertex3f( 60, -2, 15);
             glVertex3f( 60, -1, 15);
-            glVertex3f( 60, -1, 35);
+            glVertex3f( 60, -1, 45);
 
             glVertex3f(-60, -1, 15);
-            glVertex3f(-60, -1, 35);
-            glVertex3f( 60, -1, 35);
+            glVertex3f(-60, -1, 45);
+            glVertex3f( 60, -1, 45);
             glVertex3f( 60, -1, 15);
         glPopMatrix();
 
@@ -224,40 +224,81 @@ void drawHouses::drawStreet()
     glBegin(GL_QUADS);
         glPushMatrix();
             glColor3f(1, 1, 0);
-            glVertex3f(-25, -0.95, 24.5);
-            glVertex3f(-25, -0.95, 25.5);
-            glVertex3f(-22, -0.95, 25.5);
-            glVertex3f(-22, -0.95, 24.5);
 
-            glVertex3f(-17, -0.95, 24.5);
-            glVertex3f(-17, -0.95, 25.5);
-            glVertex3f(-14, -0.95, 25.5);
-            glVertex3f(-14, -0.95, 24.5);
+            glVertex3f(-57, -0.95, 29.5);
+            glVertex3f(-57, -0.95, 30.5);
+            glVertex3f(-54, -0.95, 30.5);
+            glVertex3f(-54, -0.95, 29.5);
 
-            glVertex3f(-9, -0.95, 24.5);
-            glVertex3f(-9, -0.95, 25.5);
-            glVertex3f(-6, -0.95, 25.5);
-            glVertex3f(-6, -0.95, 24.5);
+            glVertex3f(-49, -0.95, 29.5);
+            glVertex3f(-49, -0.95, 30.5);
+            glVertex3f(-46, -0.95, 30.5);
+            glVertex3f(-46, -0.95, 29.5);
 
-            glVertex3f(-1, -0.95, 24.5);
-            glVertex3f(-1, -0.95, 25.5);
-            glVertex3f( 2, -0.95, 25.5);
-            glVertex3f( 2, -0.95, 24.5);
+            glVertex3f(-41, -0.95, 29.5);
+            glVertex3f(-41, -0.95, 30.5);
+            glVertex3f(-38, -0.95, 30.5);
+            glVertex3f(-38, -0.95, 29.5);
 
-            glVertex3f( 7, -0.95, 24.5);
-            glVertex3f( 7, -0.95, 25.5);
-            glVertex3f(10, -0.95, 25.5);
-            glVertex3f(10, -0.95, 24.5);
+            glVertex3f(-33, -0.95, 29.5);
+            glVertex3f(-33, -0.95, 30.5);
+            glVertex3f(-30, -0.95, 30.5);
+            glVertex3f(-30, -0.95, 29.5);
 
-            glVertex3f(15, -0.95, 24.5);
-            glVertex3f(15, -0.95, 25.5);
-            glVertex3f(18, -0.95, 25.5);
-            glVertex3f(18, -0.95, 24.5);
+            glVertex3f(-25, -0.95, 29.5);
+            glVertex3f(-25, -0.95, 30.5);
+            glVertex3f(-22, -0.95, 30.5);
+            glVertex3f(-22, -0.95, 29.5);
 
-            glVertex3f(23, -0.95, 24.5);
-            glVertex3f(23, -0.95, 25.5);
-            glVertex3f(26, -0.95, 25.5);
-            glVertex3f(26, -0.95, 24.5);
+            glVertex3f(-17, -0.95, 29.5);
+            glVertex3f(-17, -0.95, 30.5);
+            glVertex3f(-14, -0.95, 30.5);
+            glVertex3f(-14, -0.95, 29.5);
+
+            glVertex3f(-9, -0.95, 29.5);
+            glVertex3f(-9, -0.95, 30.5);
+            glVertex3f(-6, -0.95, 30.5);
+            glVertex3f(-6, -0.95, 29.5);
+
+            glVertex3f(-1, -0.95, 29.5);
+            glVertex3f(-1, -0.95, 30.5);
+            glVertex3f( 2, -0.95, 30.5);
+            glVertex3f( 2, -0.95, 29.5);
+
+            glVertex3f( 7, -0.95, 29.5);
+            glVertex3f( 7, -0.95, 30.5);
+            glVertex3f(10, -0.95, 30.5);
+            glVertex3f(10, -0.95, 29.5);
+
+            glVertex3f(15, -0.95, 29.5);
+            glVertex3f(15, -0.95, 30.5);
+            glVertex3f(18, -0.95, 30.5);
+            glVertex3f(18, -0.95, 29.5);
+
+            glVertex3f(23, -0.95, 29.5);
+            glVertex3f(23, -0.95, 30.5);
+            glVertex3f(26, -0.95, 30.5);
+            glVertex3f(26, -0.95, 29.5);
+
+            glVertex3f(31, -0.95, 29.5);
+            glVertex3f(31, -0.95, 30.5);
+            glVertex3f(34, -0.95, 30.5);
+            glVertex3f(34, -0.95, 29.5);
+
+            glVertex3f(39, -0.95, 29.5);
+            glVertex3f(39, -0.95, 30.5);
+            glVertex3f(42, -0.95, 30.5);
+            glVertex3f(42, -0.95, 29.5);
+
+            glVertex3f(47, -0.95, 29.5);
+            glVertex3f(47, -0.95, 30.5);
+            glVertex3f(50, -0.95, 30.5);
+            glVertex3f(50, -0.95, 29.5);
+
+            glVertex3f(55, -0.95, 29.5);
+            glVertex3f(55, -0.95, 30.5);
+            glVertex3f(58, -0.95, 30.5);
+            glVertex3f(58, -0.95, 29.5);
 
         glPopMatrix();
 
@@ -471,6 +512,24 @@ void drawHouses::drawTree(){
 }
 
 
+void drawHouses::drawPoste(){
+
+    glPushMatrix();
+        glScalef(0.2, 3.0, 0.25);
+        glColor3f(0.35, 0.35, 0.35);
+        glutSolidCube(10);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslatef(0, 12.5, 7.9);
+        glScalef(1.5, 1.5, 1.5);
+        glColor3f(0.74902, 0.847059, 0.847059);
+        drawBuilding(&portaLampada);
+    glPopMatrix();
+
+}
+
+
 drawHouses::drawHouses()
 {
 
@@ -657,6 +716,59 @@ drawHouses::drawHouses()
     vidroPorta.faces[0].ind[3] = 1;
     vidroPorta.TotalDeFaces = 1;
 
+//---------------------------------------------------------
+
+    portaLampada.vertices = new VERT[5]; //Porta Lampada
+
+    portaLampada.vertices[0].x = -1;
+    portaLampada.vertices[0].y =  0;
+    portaLampada.vertices[0].z = -1;
+
+    portaLampada.vertices[1].x =  1;
+    portaLampada.vertices[1].y =  0;
+    portaLampada.vertices[1].z = -1;
+
+    portaLampada.vertices[2].x =  1;
+    portaLampada.vertices[2].y =  0;
+    portaLampada.vertices[2].z =  1;
+
+    portaLampada.vertices[3].x = -1;
+    portaLampada.vertices[3].y =  0;
+    portaLampada.vertices[3].z =  1;
+
+    portaLampada.vertices[4].x =  0;
+    portaLampada.vertices[4].y = -2;
+    portaLampada.vertices[4].z =  0;
+
+    portaLampada.faces = new FACE[5];
+
+    portaLampada.faces[0].total = 4;
+    portaLampada.faces[0].ind[0] = 0;
+    portaLampada.faces[0].ind[1] = 3;
+    portaLampada.faces[0].ind[2] = 2;
+    portaLampada.faces[0].ind[3] = 1;
+
+    portaLampada.faces[1].total = 3;
+    portaLampada.faces[1].ind[0] =  0;
+    portaLampada.faces[1].ind[1] =  1;
+    portaLampada.faces[1].ind[2] =  4;
+
+    portaLampada.faces[2].total = 3;
+    portaLampada.faces[2].ind[0] =  3;
+    portaLampada.faces[2].ind[1] =  0;
+    portaLampada.faces[2].ind[2] =  4;
+
+    portaLampada.faces[3].total = 3;
+    portaLampada.faces[3].ind[0] =  1;
+    portaLampada.faces[3].ind[1] =  2;
+    portaLampada.faces[3].ind[2] =  4;
+
+    portaLampada.faces[4].total = 3;
+    portaLampada.faces[4].ind[0] =  2;
+    portaLampada.faces[4].ind[1] =  3;
+    portaLampada.faces[4].ind[2] =  4;
+
+    portaLampada.TotalDeFaces = 5;
 
 };
 

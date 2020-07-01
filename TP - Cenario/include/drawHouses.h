@@ -1,7 +1,6 @@
 #ifndef DRAWHOUSES_H
 #define DRAWHOUSES_H
 
-
 class drawHouses
 {
     public:
@@ -12,6 +11,8 @@ class drawHouses
         void drawTree();
         void drawStreet();
         void drawSun();
+        void drawPoste();
+        void drawLampad();
 
     protected:
 
@@ -33,6 +34,7 @@ class drawHouses
         OBJ porta;
         OBJ vidro;
         OBJ vidroPorta;
+        OBJ portaLampada;
         void drawBuilding(OBJ *objeto);
         void drawLineContour(OBJ *objeto);
         void drawWindow();

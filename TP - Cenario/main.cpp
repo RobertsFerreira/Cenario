@@ -19,20 +19,24 @@ GLUquadricObj *quadratic;
 
 drawHouses *OneBuilding;
 
+GLfloat luzDifusa[4]={1,1,1,1};// "cor"
+
+GLfloat luzEspecular[4]={1,1,1,1}; // "brilho"
+
+GLfloat posicaoLuz[2][4]={
+    { 60, 27, 21.5, 1},
+    {-30, 27, 21.5, 1}
+};
+
+GLfloat DirecaoDaLuz[3] = {0, -1, 0};
+
 void DefineIluminacao (void)
 {
-	GLfloat luzAmbiente[4]={0.3,0.3,0.3,1.0};
-	GLfloat luzDifusa[4]={0.2,0.2,0.2,1.0};	   // "cor"
-	GLfloat luzEspecular[4]={1.0, 1.0, 1.0, 1.0}; // "brilho"
-	GLfloat posicaoLuz[4]={Eixo, EixoY, EixoZ,0.0};
+	GLfloat luzAmbiente[4]={0.2,0.2,0.2,1.0};
 
 	// Capacidade de brilho do material
-	GLfloat especularidade[4]={1.0,1.0,1.0,1.0};
-	GLint especMaterial=100;
-
-
-	// Habilita a luz de número 0
-	glEnable(GL_LIGHT0);
+	GLfloat especularidade[4]={1,1,1,1.0};
+	GLint especMaterial = 90;
 
 	// Define a refletância do material
 	glMaterialfv(GL_FRONT,GL_SPECULAR, especularidade);
@@ -42,15 +46,22 @@ void DefineIluminacao (void)
 	// Ativa o uso da luz ambiente
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, luzAmbiente);
 
-	// Define os parâmetros da luz de número 0
-    glLightfv(GL_LIGHT0, GL_AMBIENT, luzAmbiente);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, luzDifusa);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, luzEspecular);
-	glLightfv(GL_LIGHT0, GL_POSITION, posicaoLuz);
+    glLightfv(GL_LIGHT2, GL_AMBIENT, luzAmbiente);
+
+    for(int i = 0; i < 2; i++){
+
+        glLightfv(GL_LIGHT0+i, GL_DIFFUSE, luzDifusa);
+        glLightfv(GL_LIGHT0+i, GL_SPECULAR, luzEspecular);
+        glLightfv(GL_LIGHT0+i, GL_POSITION, posicaoLuz[i]);
+        glLightfv(GL_LIGHT0+i,GL_SPOT_DIRECTION,DirecaoDaLuz);
+        glLightf(GL_LIGHT0+i,GL_SPOT_CUTOFF,30.0);
+        glLightf(GL_LIGHT0+i,GL_SPOT_EXPONENT,91.0);
+
+    }
 }
 
 
-void Animation(int value){
+void Animation(int value){glPopMatrix();
 
 
     if(chave == false){
@@ -162,6 +173,7 @@ void Desenha(void)
 
         glPushMatrix();
          glColor3f(0.5, 0.5, 0.5);
+         glScalef(1.0, 1.2, 1.0);
          OneBuilding -> draw();
         glPopMatrix();
 
@@ -184,11 +196,29 @@ void Desenha(void)
             OneBuilding -> drawStreet();
         glPopMatrix();
 
-    glPopMatrix();
+        glPushMatrix();
+            glTranslatef(60, 15, 13.6);
+            OneBuilding -> drawPoste();
+            glPushMatrix();
+                glTranslatef(0, 12, 1.0);
+                glScalef(0.5, 0.5, 2);
+                glColor3f(0.35, 0.35, 0.35);
+                gluCylinder(quadratic, 1.0, 1, 3, 30, 30);
+            glPopMatrix();
+        glPopMatrix();
 
-        /*glTranslatef(80, 40, 0);
-        glScalef(5, 5, 5);
-        gluCylinder(quadratic, 1.0, 1, 3, 30, 30);*/
+        glPushMatrix();
+            glTranslatef(-30, 15, 13.6);
+            OneBuilding -> drawPoste();
+            glPushMatrix();
+                glTranslatef(0, 12, 1.0);
+                glScalef(0.5, 0.5, 2);
+                glColor3f(0.35, 0.35, 0.35);
+                gluCylinder(quadratic, 1.0, 1, 3, 30, 30);
+            glPopMatrix();
+        glPopMatrix();
+
+    glPopMatrix();
 
     glutSwapBuffers();
 
@@ -310,10 +340,10 @@ void TeclaEspecial(int key, int x, int y){
 
 void Teclado (unsigned char key, int x, int y)
 {
-    if (key == 27)
+    if (key == 27)//Tecla Esc
         exit(0);
 
-    if(key == 102)
+    if(key == 102)//Tecla F
         glutFullScreen();
 
     EspecificaParametrosVisualizacao();
@@ -327,15 +357,19 @@ void Inicializa (void)
     glClearColor(RedCeu, GreenCeu, BlueCeu, 1.0f);
     glLineWidth(2.0);
 
-    glEnable(GL_LIGHTING);
-
     glEnable(GL_COLOR_MATERIAL);
+
+    glEnable(GL_LIGHTING);
 
 	glEnable(GL_LIGHT0);
 
-    glShadeModel(GL_SMOOTH);
+	glEnable(GL_LIGHT1);
+
+	glEnable(GL_LIGHT2);
 
     glEnable(GL_DEPTH_TEST);
+
+    glShadeModel(GL_SMOOTH);
 
 	angle=45;
 
@@ -366,7 +400,7 @@ int main(void)
 
     glutReshapeFunc(AlteraTamanhoJanela);
 
-    glutKeyboardFunc (Teclado);
+    glutKeyboardFunc(Teclado);
 
     glutSpecialFunc(TeclaEspecial);
 
