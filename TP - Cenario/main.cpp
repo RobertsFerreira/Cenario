@@ -211,7 +211,6 @@ void Desenha(void)
 
             if(dia == true){
 
-
                 glEnable(GL_LIGHT2);
 
                 desativaLuz = false;
@@ -236,29 +235,6 @@ void Desenha(void)
             glTranslatef(78, 0, 0);
             OneBuilding -> drawTree();
         glPopMatrix();
-
-//---------Chão do outro Lado da Rua-----------------
-
-    glPushMatrix();
-        glRotatef(180, 0, 1, 0);
-        glTranslatef(-27.8, 0, -60);
-        glPushMatrix();
-            glScalef(1.2, 1.0, 1.0);
-            glTranslatef(11.6, 0, 0);
-            OneBuilding -> drawFloor();
-        glPopMatrix();
-
-        glPushMatrix();
-            OneBuilding -> drawTree();
-        glPopMatrix();
-
-        glPushMatrix();
-            glTranslatef(78, 0, 0);
-            OneBuilding -> drawTree();
-        glPopMatrix();
-    glPopMatrix();
-
-//---------------------------------------------------
 
         glPushMatrix();
          glColor3f(0.5, 0.5, 0.5);

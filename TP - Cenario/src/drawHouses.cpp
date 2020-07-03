@@ -3,11 +3,35 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <GL/glut.h>
+#include <time.h>
 
 
 void drawHouses::drawSun(){
 
     glutSolidSphere(5, 30, 30);
+
+}
+
+
+void drawHouses::drawStar(){
+
+    int quantidadeDeEstrela = 20;
+
+    constelacao.estrela = new Star[quantidadeDeEstrela];
+
+    for(int i = 0; i < quantidadeDeEstrela; i++){
+
+        constelacao.estrela[i].x = rand() % 1000 + 1;
+        constelacao.estrela[i].y = rand() % 1000 + 1;
+        constelacao.estrela[i].z = rand() % 1000 + 1;
+
+        glPushMatrix();
+            glColor3f(1, 1, 1);
+            glTranslatef(constelacao.estrela[i].x, constelacao.estrela[i].y, constelacao.estrela[i].z);
+            glutSolidSphere(20, 50, 50);
+        glPopMatrix();
+
+    }
 
 }
 

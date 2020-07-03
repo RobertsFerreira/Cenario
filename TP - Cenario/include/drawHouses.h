@@ -13,10 +13,17 @@ class drawHouses
         void drawSun();
         void drawPoste();
         void drawLampad();
+        void drawStar();
 
     protected:
 
     private:
+        struct Star{
+            float x, y, z;
+        };
+        struct Constellation{
+            Star *estrela;
+        };
         struct VERT{
             float x, y, z;
         };
@@ -29,6 +36,7 @@ class drawHouses
             FACE *faces;
             int TotalDeFaces;
         };
+        Constellation constelacao;
         OBJ predio;
         OBJ janela;
         OBJ porta;
