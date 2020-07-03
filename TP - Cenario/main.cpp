@@ -11,7 +11,7 @@ GLfloat obsX, obsY, obsZ, obsX_ini, obsY_ini, obsZ_ini;
 GLsizei  moveX = 0, moveY = 0, moveZ = 100;
 int x_ini,y_ini,bot, win = 40, panAxleX = 0, panAxleY = 0, panAxleZ = 0;
 int panObjectX = 0, panObjectY = 0, panObjectZ = 0;
-bool chave, valor = true;
+bool chave, valor = true, desativaLuz = false, dia = true;
 GLfloat RedCeu = 0.3, GreenCeu = 0.7, BlueCeu = 1, Eixo = 200, EixoY = 0, EixoZ = 30;
 GLfloat vermelhoLua = 1, verdeLua = 1, azulLua = 0;
 
@@ -20,32 +20,36 @@ GLUquadricObj *quadratic;
 drawHouses *OneBuilding;
 
 GLfloat luzDifusa[2][4]={
-                {1.0,1.0,1.0,1.0},
-                {1.0,1.0,1.0,1.0}};// "cor"
+    {1.0,1.0,1.0,1.0},
+    {1.0,1.0,1.0,1.0}
+};// "cor"
 
 GLfloat luzEspecular[2][4]={
-                {1.0, 1.0, 1.0, 1.0},
-                {1.0, 1.0, 1.0, 1.0}}; // "brilho"
-
-GLfloat posicaoLuz[3][4]={
-    { 45, 27, 21.5, 1.0},
-    {-30, 27, 21.5, 1.0},
-    {Eixo, EixoY, EixoZ, 0.0}
-};
+    {1.0, 1.0, 1.0, 1.0},
+    {1.0, 1.0, 1.0, 1.0}
+}; // "brilho"
 
 GLfloat DirecaoDaLuz[3] = {0, -1, 0};
+
+GLfloat especularidade[2][4]={
+    {0.5, 0.5, 0.5, 1.0},
+    {0.0, 0.0, 0.0, 1.0}
+};
 
 
 void DefineIluminacao (void)
 {
+
+    GLfloat posicaoLuz[3][4]={
+        { 45, 27, 21.5, 1.0},
+        {-30, 27, 21.5, 1.0},
+        {Eixo, EixoY, EixoZ, 0.0}
+    };
+
 	GLfloat luzAmbiente[4]={0.4, 0.4, 0.4, 1.0};
 
 	// Capacidade de brilho do material
-	GLfloat especularidade[4]={0.5, 0.5, 0.5, 1.0};
     GLint especMaterial = 2;
-
-	// Define a refletância do material
-	glMaterialfv(GL_FRONT,GL_SPECULAR, especularidade);
 
     // Define a concentração do brilho
     glMateriali(GL_FRONT,GL_SHININESS,especMaterial);
@@ -92,9 +96,14 @@ void Animation(int value){
             verdeLua = 0.658824;
             azulLua = 0.658824;
 
+            // Define a refletância do material
+            glMaterialfv(GL_FRONT,GL_SPECULAR, especularidade[0]);
+
             glDisable(GL_LIGHT2);
             glEnable(GL_LIGHT0);
             glEnable(GL_LIGHT1);
+
+            dia = false;
 
             Eixo = 200.0;
             EixoY = 0.0;
@@ -109,9 +118,14 @@ void Animation(int value){
             verdeLua = 1.0;
             azulLua = 0.0;
 
+            // Define a refletância do material
+            glMaterialfv(GL_FRONT,GL_SPECULAR, especularidade[1]);
+
             glEnable(GL_LIGHT2);
             glDisable(GL_LIGHT0);
             glDisable(GL_LIGHT1);
+
+            dia = true;
 
             Eixo = 200.0;
             EixoY = 0.0;
@@ -154,10 +168,11 @@ void Animation(int value){
 
             }
 
+        glutTimerFunc(41,Animation,1);
+
     }
 
-        glutPostRedisplay();
-        glutTimerFunc(41,Animation,1);
+    glutPostRedisplay();
 
 }
 
@@ -173,11 +188,37 @@ void Desenha(void)
 
     glPushMatrix();
 
+        if(desativaLuz == false){
+
+            if(dia == true){
+
+
+                glDisable(GL_LIGHT2);
+
+                desativaLuz = true;
+
+            }
+
+        }
+
         glPushMatrix();
             glTranslatef(Eixo, EixoY, EixoZ);
             glColor3f(vermelhoLua, verdeLua, azulLua);
             OneBuilding->drawSun();
         glPopMatrix();
+
+        if(desativaLuz == true){
+
+            if(dia == true){
+
+
+                glEnable(GL_LIGHT2);
+
+                desativaLuz = false;
+
+            }
+
+        }
 
         DefineIluminacao();
 
@@ -195,6 +236,29 @@ void Desenha(void)
             glTranslatef(78, 0, 0);
             OneBuilding -> drawTree();
         glPopMatrix();
+
+//---------Chão do outro Lado da Rua-----------------
+
+    glPushMatrix();
+        glRotatef(180, 0, 1, 0);
+        glTranslatef(-27.8, 0, -60);
+        glPushMatrix();
+            glScalef(1.2, 1.0, 1.0);
+            glTranslatef(11.6, 0, 0);
+            OneBuilding -> drawFloor();
+        glPopMatrix();
+
+        glPushMatrix();
+            OneBuilding -> drawTree();
+        glPopMatrix();
+
+        glPushMatrix();
+            glTranslatef(78, 0, 0);
+            OneBuilding -> drawTree();
+        glPopMatrix();
+    glPopMatrix();
+
+//---------------------------------------------------
 
         glPushMatrix();
          glColor3f(0.5, 0.5, 0.5);

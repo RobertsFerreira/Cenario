@@ -70,7 +70,7 @@ void drawHouses::drawWindow(){
         glPopMatrix();
 
         glPushMatrix();
-            glColor3f(0.74902, 0.847059, 0.847059);
+            glColor3f(1, 1, 1);
             glTranslatef(5, 25, 10.02);
             drawBuilding(&vidro);
         glPopMatrix();
@@ -84,7 +84,7 @@ void drawHouses::drawWindow(){
         glPopMatrix();
 
         glPushMatrix();
-            glColor3f(0.74902, 0.847059, 0.847059);
+            glColor3f(1, 1, 1);
             glTranslatef(-5, 25, 10.02);
             drawBuilding(&vidro);
         glPopMatrix();
@@ -98,7 +98,7 @@ void drawHouses::drawWindow(){
         glPopMatrix();
 
         glPushMatrix();
-            glColor3f(0.74902, 0.847059, 0.847059);
+            glColor3f(1, 1, 1);
             glTranslatef(5, 15, 10.02);
             drawBuilding(&vidro);
         glPopMatrix();
@@ -112,7 +112,7 @@ void drawHouses::drawWindow(){
         glPopMatrix();
 
         glPushMatrix();
-            glColor3f(0.74902, 0.847059, 0.847059);
+            glColor3f(1, 1, 1);
             glTranslatef(-5, 15, 10.02);
             drawBuilding(&vidro);
         glPopMatrix();
@@ -128,7 +128,7 @@ void drawHouses::drawWindow(){
         glPopMatrix();
 
         glPushMatrix();
-            glColor3f(0.74902, 0.847059, 0.847059);
+            glColor3f(1, 1, 1);
             glTranslatef(5, 25, 10.02);
             drawBuilding(&vidro);
         glPopMatrix();
@@ -142,7 +142,7 @@ void drawHouses::drawWindow(){
         glPopMatrix();
 
         glPushMatrix();
-            glColor3f(0.74902, 0.847059, 0.847059);
+            glColor3f(1, 1, 1);
             glTranslatef(-5, 25, 10.02);
             drawBuilding(&vidro);
         glPopMatrix();
@@ -156,7 +156,7 @@ void drawHouses::drawWindow(){
         glPopMatrix();
 
         glPushMatrix();
-            glColor3f(0.74902, 0.847059, 0.847059);
+            glColor3f(1, 1, 1);
             glTranslatef(5, 15, 10.02);
             drawBuilding(&vidro);
         glPopMatrix();
@@ -170,7 +170,7 @@ void drawHouses::drawWindow(){
         glPopMatrix();
 
         glPushMatrix();
-            glColor3f(0.74902, 0.847059, 0.847059);
+            glColor3f(1, 1, 1);
             glTranslatef(-5, 15, 10.02);
             drawBuilding(&vidro);
         glPopMatrix();
@@ -768,7 +768,7 @@ void drawHouses::draw(){
     glPopMatrix();
 
     glPushMatrix();
-        glColor3f(0.74902, 0.847059, 0.847059);
+        glColor3f(1, 1, 1);
         glTranslatef(5, 25, 10.02);
         drawBuilding(&vidro);
     glPopMatrix();
@@ -779,7 +779,7 @@ void drawHouses::draw(){
     glPopMatrix();
 
     glPushMatrix();
-        glColor3f(0.74902, 0.847059, 0.847059);
+        glColor3f(1, 1, 1);
         glTranslatef(-5, 25, 10.02);
         drawBuilding(&vidro);
     glPopMatrix();
@@ -790,7 +790,7 @@ void drawHouses::draw(){
     glPopMatrix();
 
     glPushMatrix();
-        glColor3f(0.74902, 0.847059, 0.847059);
+        glColor3f(1, 1, 1);
         glTranslatef(5, 15, 10.02);
         drawBuilding(&vidro);
     glPopMatrix();
@@ -801,7 +801,7 @@ void drawHouses::draw(){
     glPopMatrix();
 
     glPushMatrix();
-        glColor3f(0.74902, 0.847059, 0.847059);
+        glColor3f(1, 1, 1);
         glTranslatef(-5, 15, 10.02);
         drawBuilding(&vidro);
     glPopMatrix();
@@ -814,7 +814,7 @@ void drawHouses::draw(){
     glPopMatrix();
 
     glPushMatrix();
-        glColor3f(0.74902, 0.847059, 0.847059);
+        glColor3f(1, 1, 1);
         glTranslatef(0, 0, 10.02);
         drawBuilding(&vidroPorta);
     glPopMatrix();
@@ -825,7 +825,7 @@ void drawHouses::draw(){
     glPopMatrix();
 
     glPushMatrix();
-        glColor3f(0.74902, 0.847059, 0.847059);
+        glColor3f(1, 1, 1);
         glTranslatef(2, 0, 10.02);
         drawBuilding(&vidroPorta);
     glPopMatrix();
