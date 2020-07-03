@@ -19,66 +19,49 @@ GLUquadricObj *quadratic;
 
 drawHouses *OneBuilding;
 
-GLfloat luzDifusa[2][4]={
-                {1.0,1.0,1.0,1.0},
-                {1.0,1.0,1.0,1.0}};// "cor"
+GLfloat luzDifusa[4]={1,1,1,1};// "cor"
 
-GLfloat luzEspecular[2][4]={
-                {1.0, 1.0, 1.0, 1.0},
-                {1.0, 1.0, 1.0, 1.0}}; // "brilho"
+GLfloat luzEspecular[4]={1,1,1,1}; // "brilho"
 
-GLfloat posicaoLuz[3][4]={
-    { 45, 27, 21.5, 1.0},
-    {-30, 27, 21.5, 1.0},
-    {Eixo, EixoY, EixoZ, 0.0}
+GLfloat posicaoLuz[2][4]={
+    { 60, 27, 21.5, 1},
+    {-30, 27, 21.5, 1}
 };
 
 GLfloat DirecaoDaLuz[3] = {0, -1, 0};
 
-
 void DefineIluminacao (void)
 {
-	GLfloat luzAmbiente[4]={0.4, 0.4, 0.4, 1.0};
+	GLfloat luzAmbiente[4]={0.2,0.2,0.2,1.0};
 
 	// Capacidade de brilho do material
-	GLfloat especularidade[4]={0.5, 0.5, 0.5, 1.0};
-    GLint especMaterial = 2;
+	GLfloat especularidade[4]={1,1,1,1.0};
+	GLint especMaterial = 90;
 
 	// Define a refletância do material
 	glMaterialfv(GL_FRONT,GL_SPECULAR, especularidade);
-
-    // Define a concentração do brilho
-    glMateriali(GL_FRONT,GL_SHININESS,especMaterial);
+	// Define a concentração do brilho
+	glMateriali(GL_FRONT,GL_SHININESS,especMaterial);
 
 	// Ativa o uso da luz ambiente
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, luzAmbiente);
 
-    glLightfv(GL_LIGHT3, GL_AMBIENT, luzAmbiente);
+    glLightfv(GL_LIGHT2, GL_AMBIENT, luzAmbiente);
 
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < 2; i++){
 
-        if(i != 2){
-
-            glLightfv(GL_LIGHT0+i, GL_DIFFUSE, luzDifusa[i]);
-            glLightfv(GL_LIGHT0+i, GL_SPECULAR, luzEspecular[i]);
-            glLightfv(GL_LIGHT0+i, GL_POSITION, posicaoLuz[i]);
-            glLightfv(GL_LIGHT0+i, GL_SPOT_DIRECTION,DirecaoDaLuz);
-            glLightf (GL_LIGHT0+i,  GL_SPOT_CUTOFF,50.0);
-            glLightf (GL_LIGHT0+i,GL_SPOT_EXPONENT,5.0);
-
-        }else{
-
-            glLightfv(GL_LIGHT0+i, GL_DIFFUSE, luzDifusa[i]);
-            glLightfv(GL_LIGHT0+i, GL_SPECULAR, luzEspecular[i]);
-            glLightfv(GL_LIGHT0+i, GL_POSITION, posicaoLuz[i]);
-
-        }
+        glLightfv(GL_LIGHT0+i, GL_DIFFUSE, luzDifusa);
+        glLightfv(GL_LIGHT0+i, GL_SPECULAR, luzEspecular);
+        glLightfv(GL_LIGHT0+i, GL_POSITION, posicaoLuz[i]);
+        glLightfv(GL_LIGHT0+i,GL_SPOT_DIRECTION,DirecaoDaLuz);
+        glLightf(GL_LIGHT0+i,GL_SPOT_CUTOFF,30.0);
+        glLightf(GL_LIGHT0+i,GL_SPOT_EXPONENT,91.0);
 
     }
 }
 
 
-void Animation(int value){
+void Animation(int value){glPopMatrix();
 
 
     if(chave == false){
@@ -92,10 +75,6 @@ void Animation(int value){
             verdeLua = 0.658824;
             azulLua = 0.658824;
 
-            glDisable(GL_LIGHT2);
-            glEnable(GL_LIGHT0);
-            glEnable(GL_LIGHT1);
-
             Eixo = 200.0;
             EixoY = 0.0;
 
@@ -108,10 +87,6 @@ void Animation(int value){
             vermelhoLua =  1.0;
             verdeLua = 1.0;
             azulLua = 0.0;
-
-            glEnable(GL_LIGHT2);
-            glDisable(GL_LIGHT0);
-            glDisable(GL_LIGHT1);
 
             Eixo = 200.0;
             EixoY = 0.0;
@@ -167,6 +142,8 @@ void Desenha(void)
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+    DefineIluminacao();
+
     glClearColor(RedCeu, GreenCeu, BlueCeu, 1.0f);
 
 	quadratic = gluNewQuadric();
@@ -179,8 +156,6 @@ void Desenha(void)
             OneBuilding->drawSun();
         glPopMatrix();
 
-        DefineIluminacao();
-
         glPushMatrix();
             glScalef(1.2, 1.0, 1.0);
             glTranslatef(11.6, 0, 0);
@@ -192,7 +167,7 @@ void Desenha(void)
         glPopMatrix();
 
         glPushMatrix();
-            glTranslatef(78, 0, 0);
+            glTranslatef(73, 0, 0);
             OneBuilding -> drawTree();
         glPopMatrix();
 
@@ -219,14 +194,10 @@ void Desenha(void)
             glScalef(1.2, 1.0, 1.0);
             glTranslatef(11.6, 0, 0);
             OneBuilding -> drawStreet();
-            glPushMatrix();
-                glScalef(1.2, 1.0, 1.0);
-                glTranslatef(11.6, 0, 0);
-            glPopMatrix();
         glPopMatrix();
 
         glPushMatrix();
-            glTranslatef(45, 15, 13.6);
+            glTranslatef(60, 15, 13.6);
             OneBuilding -> drawPoste();
             glPushMatrix();
                 glTranslatef(0, 12, 1.0);
@@ -390,9 +361,11 @@ void Inicializa (void)
 
     glEnable(GL_LIGHTING);
 
-	glEnable(GL_LIGHT2);
+	glEnable(GL_LIGHT0);
 
-	glEnable(GL_LIGHT3);
+	glEnable(GL_LIGHT1);
+
+	glEnable(GL_LIGHT2);
 
     glEnable(GL_DEPTH_TEST);
 

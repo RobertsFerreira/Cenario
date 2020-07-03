@@ -182,127 +182,105 @@ void drawHouses::drawWindow(){
 void drawHouses::drawStreet()
 {
 
-     glNormal3f(1,1,1);
-
-     glBegin(GL_QUADS);
-
 	 glPushMatrix();
-            glColor3f(0.7, 0.7, 0.7);
-            glVertex3f(-60, -2, 15);
-            glVertex3f(-60, -2, 45);
-            glVertex3f( 60, -2, 45);
-            glVertex3f( 60, -2, 15);
-
-            glVertex3f(-60, -2, 15);
-            glVertex3f( 60, -2, 15);
-            glVertex3f( 60, -1, 15);
-            glVertex3f(-60, -1, 15);
-
-            glVertex3f(-60, -2, 15);
-            glVertex3f(-60, -2, 45);
-            glVertex3f(-60, -1, 45);
-            glVertex3f(-60, -1, 15);
-
-            glVertex3f(-60, -2, 45);
-            glVertex3f( 60, -2, 45);
-            glVertex3f( 60, -1, 45);
-            glVertex3f(-60, -1, 45);
-
-            glVertex3f( 60, -2, 45);
-            glVertex3f( 60, -2, 15);
-            glVertex3f( 60, -1, 15);
-            glVertex3f( 60, -1, 45);
-
-            glVertex3f(-60, -1, 15);
-            glVertex3f(-60, -1, 45);
-            glVertex3f( 60, -1, 45);
-            glVertex3f( 60, -1, 15);
-        glPopMatrix();
-
-    glEnd();
-
-    glBegin(GL_QUADS);
+        glColor3f(0.4, 0.4, 0.4);
         glPushMatrix();
+            glBegin(GL_QUAD_STRIP);
+
+            glVertex3f(-60, -2, 15);
+            glVertex3f(-60, -2, 45);
+
+            glVertex3f(  0, -2, 15);
+            glVertex3f(  0, -2, 45);
+
+            glVertex3f( 60, -2, 15);
+            glVertex3f( 60, -2, 45);
+            glEnd();
+        glPopMatrix();
+    glPopMatrix();
+
+//-------------------------------------------
+
+    glPushMatrix();
+        glBegin(GL_QUADS);
             glColor3f(1, 1, 0);
 
-            glVertex3f(-57, -0.95, 29.5);
-            glVertex3f(-57, -0.95, 30.5);
-            glVertex3f(-54, -0.95, 30.5);
-            glVertex3f(-54, -0.95, 29.5);
+            glVertex3f(-57, -1.95, 29.5);
+            glVertex3f(-57, -1.95, 30.5);
+            glVertex3f(-54, -1.95, 30.5);
+            glVertex3f(-54, -1.95, 29.5);
 
-            glVertex3f(-49, -0.95, 29.5);
-            glVertex3f(-49, -0.95, 30.5);
-            glVertex3f(-46, -0.95, 30.5);
-            glVertex3f(-46, -0.95, 29.5);
+            glVertex3f(-49, -1.95, 29.5);
+            glVertex3f(-49, -1.95, 30.5);
+            glVertex3f(-46, -1.95, 30.5);
+            glVertex3f(-46, -1.95, 29.5);
 
-            glVertex3f(-41, -0.95, 29.5);
-            glVertex3f(-41, -0.95, 30.5);
-            glVertex3f(-38, -0.95, 30.5);
-            glVertex3f(-38, -0.95, 29.5);
+            glVertex3f(-41, -1.95, 29.5);
+            glVertex3f(-41, -1.95, 30.5);
+            glVertex3f(-38, -1.95, 30.5);
+            glVertex3f(-38, -1.95, 29.5);
 
-            glVertex3f(-33, -0.95, 29.5);
-            glVertex3f(-33, -0.95, 30.5);
-            glVertex3f(-30, -0.95, 30.5);
-            glVertex3f(-30, -0.95, 29.5);
+            glVertex3f(-33, -1.95, 29.5);
+            glVertex3f(-33, -1.95, 30.5);
+            glVertex3f(-30, -1.95, 30.5);
+            glVertex3f(-30, -1.95, 29.5);
 
-            glVertex3f(-25, -0.95, 29.5);
-            glVertex3f(-25, -0.95, 30.5);
-            glVertex3f(-22, -0.95, 30.5);
-            glVertex3f(-22, -0.95, 29.5);
+            glVertex3f(-25, -1.95, 29.5);
+            glVertex3f(-25, -1.95, 30.5);
+            glVertex3f(-22, -1.95, 30.5);
+            glVertex3f(-22, -1.95, 29.5);
 
-            glVertex3f(-17, -0.95, 29.5);
-            glVertex3f(-17, -0.95, 30.5);
-            glVertex3f(-14, -0.95, 30.5);
-            glVertex3f(-14, -0.95, 29.5);
+            glVertex3f(-17, -1.95, 29.5);
+            glVertex3f(-17, -1.95, 30.5);
+            glVertex3f(-14, -1.95, 30.5);
+            glVertex3f(-14, -1.95, 29.5);
 
-            glVertex3f(-9, -0.95, 29.5);
-            glVertex3f(-9, -0.95, 30.5);
-            glVertex3f(-6, -0.95, 30.5);
-            glVertex3f(-6, -0.95, 29.5);
+            glVertex3f(-9, -1.95, 29.5);
+            glVertex3f(-9, -1.95, 30.5);
+            glVertex3f(-6, -1.95, 30.5);
+            glVertex3f(-6, -1.95, 29.5);
 
-            glVertex3f(-1, -0.95, 29.5);
-            glVertex3f(-1, -0.95, 30.5);
-            glVertex3f( 2, -0.95, 30.5);
-            glVertex3f( 2, -0.95, 29.5);
+            glVertex3f(-1, -1.95, 29.5);
+            glVertex3f(-1, -1.95, 30.5);
+            glVertex3f( 2, -1.95, 30.5);
+            glVertex3f( 2, -1.95, 29.5);
 
-            glVertex3f( 7, -0.95, 29.5);
-            glVertex3f( 7, -0.95, 30.5);
-            glVertex3f(10, -0.95, 30.5);
-            glVertex3f(10, -0.95, 29.5);
+            glVertex3f( 7, -1.95, 29.5);
+            glVertex3f( 7, -1.95, 30.5);
+            glVertex3f(10, -1.95, 30.5);
+            glVertex3f(10, -1.95, 29.5);
 
-            glVertex3f(15, -0.95, 29.5);
-            glVertex3f(15, -0.95, 30.5);
-            glVertex3f(18, -0.95, 30.5);
-            glVertex3f(18, -0.95, 29.5);
+            glVertex3f(15, -1.95, 29.5);
+            glVertex3f(15, -1.95, 30.5);
+            glVertex3f(18, -1.95, 30.5);
+            glVertex3f(18, -1.95, 29.5);
 
-            glVertex3f(23, -0.95, 29.5);
-            glVertex3f(23, -0.95, 30.5);
-            glVertex3f(26, -0.95, 30.5);
-            glVertex3f(26, -0.95, 29.5);
+            glVertex3f(23, -1.95, 29.5);
+            glVertex3f(23, -1.95, 30.5);
+            glVertex3f(26, -1.95, 30.5);
+            glVertex3f(26, -1.95, 29.5);
 
-            glVertex3f(31, -0.95, 29.5);
-            glVertex3f(31, -0.95, 30.5);
-            glVertex3f(34, -0.95, 30.5);
-            glVertex3f(34, -0.95, 29.5);
+            glVertex3f(31, -1.95, 29.5);
+            glVertex3f(31, -1.95, 30.5);
+            glVertex3f(34, -1.95, 30.5);
+            glVertex3f(34, -1.95, 29.5);
 
-            glVertex3f(39, -0.95, 29.5);
-            glVertex3f(39, -0.95, 30.5);
-            glVertex3f(42, -0.95, 30.5);
-            glVertex3f(42, -0.95, 29.5);
+            glVertex3f(39, -1.95, 29.5);
+            glVertex3f(39, -1.95, 30.5);
+            glVertex3f(42, -1.95, 30.5);
+            glVertex3f(42, -1.95, 29.5);
 
-            glVertex3f(47, -0.95, 29.5);
-            glVertex3f(47, -0.95, 30.5);
-            glVertex3f(50, -0.95, 30.5);
-            glVertex3f(50, -0.95, 29.5);
+            glVertex3f(47, -1.95, 29.5);
+            glVertex3f(47, -1.95, 30.5);
+            glVertex3f(50, -1.95, 30.5);
+            glVertex3f(50, -1.95, 29.5);
 
-            glVertex3f(55, -0.95, 29.5);
-            glVertex3f(55, -0.95, 30.5);
-            glVertex3f(58, -0.95, 30.5);
-            glVertex3f(58, -0.95, 29.5);
-
-        glPopMatrix();
-
-    glEnd();
+            glVertex3f(55, -1.95, 29.5);
+            glVertex3f(55, -1.95, 30.5);
+            glVertex3f(58, -1.95, 30.5);
+            glVertex3f(58, -1.95, 29.5);
+        glEnd();
+    glPopMatrix();
 
 
 
@@ -314,10 +292,9 @@ void drawHouses::drawFloor()
 
     glNormal3f(1,1,1);
 
-	glBegin(GL_QUADS);
-
 	 glPushMatrix();
-            glColor3f(0.4, 0.4, 0.4); //Desenha passeio
+        glBegin(GL_QUADS);
+            glColor3f(0.2, 0.2, 0.2); //Desenha passeio
             glVertex3f(-60, -2, 10);
             glVertex3f(-60, -2, 15);
             glVertex3f( 60, -2, 15);
@@ -347,12 +324,13 @@ void drawHouses::drawFloor()
             glVertex3f(-60,  0, 15);
             glVertex3f( 60,  0, 15);
             glVertex3f( 60,  0, 10);
-        glPopMatrix();
+        glEnd();
+    glPopMatrix();
 
 //----------------------------------------------
 
-
-        glPushMatrix();
+    glPushMatrix();
+        glBegin(GL_QUADS);
             glColor3f(0.36, 0.25, 0.20); //Desenha terreno do prédio
             glVertex3f(-60, -2,-15);
             glVertex3f(-60, -2, 10);
@@ -386,13 +364,12 @@ void drawHouses::drawFloor()
                 glVertex3f( 60,  0, 10);
                 glVertex3f( 60,  0,-15);
             glPopMatrix();
-        glPopMatrix();
-
-	glEnd();
+        glEnd();
+     glPopMatrix();
 
 //------------------------------------------------------------
 
-	glBegin(GL_LINE_LOOP); //linhas de contorno
+	/*glBegin(GL_LINE_LOOP); //linhas de contorno
 
 	 glPushMatrix();
 
@@ -465,7 +442,7 @@ void drawHouses::drawFloor()
         glPopMatrix();
 
 	glEnd();
-
+*/
 }
 
 
