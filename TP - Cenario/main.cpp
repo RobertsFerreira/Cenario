@@ -43,7 +43,7 @@ void DefineIluminacao (void)
     GLfloat posicaoLuz[3][4]={
         { 45, 27, 21.5, 1.0},
         {-30, 27, 21.5, 1.0},
-        {Eixo, EixoY, EixoZ, 0.0}
+        {Eixo, EixoY, EixoZ, 1.0}
     };
 
 	GLfloat luzAmbiente[4]={0.4, 0.4, 0.4, 1.0};
@@ -67,8 +67,8 @@ void DefineIluminacao (void)
             glLightfv(GL_LIGHT0+i, GL_SPECULAR, luzEspecular[i]);
             glLightfv(GL_LIGHT0+i, GL_POSITION, posicaoLuz[i]);
             glLightfv(GL_LIGHT0+i, GL_SPOT_DIRECTION,DirecaoDaLuz);
-            glLightf (GL_LIGHT0+i,  GL_SPOT_CUTOFF,50.0);
-            glLightf (GL_LIGHT0+i,GL_SPOT_EXPONENT,5.0);
+            glLightf (GL_LIGHT0+i, GL_SPOT_CUTOFF,50.0);
+            glLightf (GL_LIGHT0+i, GL_SPOT_EXPONENT,5.0);
 
         }else{
 
@@ -224,7 +224,7 @@ void Desenha(void)
         glPushMatrix();
             glScalef(1.2, 1.0, 1.0);
             glTranslatef(11.6, 0, 0);
-            OneBuilding -> drawFloor();
+            OneBuilding -> drawFloor(0);
         glPopMatrix();
 
         glPushMatrix();
@@ -236,11 +236,53 @@ void Desenha(void)
             OneBuilding -> drawTree();
         glPopMatrix();
 
+//-----------Arvore do outro lado---------------
+
+        glPushMatrix();
+            glScalef(1.2, 1.0, 1.0);
+            glTranslatef(11.6, 0, 65);
+            OneBuilding -> drawFloor(1);
+        glPopMatrix();
+
+        glPushMatrix();
+            glRotatef(180,0,1,0);
+            glTranslatef(0, 0, -65);
+            OneBuilding -> drawTree();
+        glPopMatrix();
+
+        glPushMatrix();
+            glRotatef(180,0,1,0);
+            glTranslatef(64, 0, -65);
+            OneBuilding -> drawTree();
+        glPopMatrix();
+
+//--------------------------------------------
+
         glPushMatrix();
          glColor3f(0.5, 0.5, 0.5);
          glScalef(1.0, 1.2, 1.0);
          OneBuilding -> draw();
         glPopMatrix();
+
+//----------Predio do outro lado--------------
+
+        glPushMatrix();
+         glColor3f(0.3, 0.1, 0.3);
+         glRotatef(180,0,1,0);
+         glTranslatef(12, 0, -60);
+         glScalef(1.0, 1.2, 1.0);
+         OneBuilding -> draw();
+        glPopMatrix();
+
+        glPushMatrix();
+         glColor3f(0.8, 0.8, 0.0);
+         glRotatef(180,0,1,0);
+         glTranslatef(-56, 0, -60);
+         glScalef(1.0, 1.2, 1.0);
+         OneBuilding -> draw();
+        glPopMatrix();
+
+//--------------------------------------------
 
         glPushMatrix();
          glTranslatef(30, 0, 0);

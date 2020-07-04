@@ -7,7 +7,7 @@ class drawHouses
         drawHouses();
         virtual ~drawHouses();
         void draw();
-        void drawFloor();
+        void drawFloor(int value);
         void drawTree();
         void drawStreet();
         void drawSun();

@@ -311,45 +311,87 @@ void drawHouses::drawStreet()
 }
 
 
-void drawHouses::drawFloor()
+void drawHouses::drawFloor(int value)
 {
 
     glNormal3f(1,1,1);
 
-	 glPushMatrix();
-        glBegin(GL_QUADS);
-            glColor3f(0.2, 0.2, 0.2); //Desenha passeio
-            glVertex3f(-60, -2, 10);
-            glVertex3f(-60, -2, 15);
-            glVertex3f( 60, -2, 15);
-            glVertex3f( 60, -2, 10);
+	 if(value == 0){
 
-            glVertex3f(-60, -2, 10);
-            glVertex3f(-60,  0, 10);
-            glVertex3f( 60,  0, 10);
-            glVertex3f( 60, -2, 10);
+        glPushMatrix();
+            glBegin(GL_QUADS);
+                glColor3f(0.2, 0.2, 0.2); //Desenha passeio
+                glVertex3f(-60, -2, 10);
+                glVertex3f(-60, -2, 15);
+                glVertex3f( 60, -2, 15);
+                glVertex3f( 60, -2, 10);
 
-            glVertex3f(-60, -2, 10);
-            glVertex3f(-60, -2, 15);
-            glVertex3f(-60,  0, 15);
-            glVertex3f(-60,  0, 10);
+                glVertex3f(-60, -2, 10);
+                glVertex3f(-60,  0, 10);
+                glVertex3f( 60,  0, 10);
+                glVertex3f( 60, -2, 10);
 
-            glVertex3f(-60, -2, 15);
-            glVertex3f( 60, -2, 15);
-            glVertex3f( 60,  0, 15);
-            glVertex3f(-60,  0, 15);
+                glVertex3f(-60, -2, 10);
+                glVertex3f(-60, -2, 15);
+                glVertex3f(-60,  0, 15);
+                glVertex3f(-60,  0, 10);
 
-            glVertex3f( 60, -2, 10);
-            glVertex3f( 60,  0, 10);
-            glVertex3f( 60,  0, 15);
-            glVertex3f( 60, -2, 15);
+                glVertex3f(-60, -2, 15);
+                glVertex3f( 60, -2, 15);
+                glVertex3f( 60,  0, 15);
+                glVertex3f(-60,  0, 15);
 
-            glVertex3f(-60,  0, 10);
-            glVertex3f(-60,  0, 15);
-            glVertex3f( 60,  0, 15);
-            glVertex3f( 60,  0, 10);
-        glEnd();
-    glPopMatrix();
+                glVertex3f( 60, -2, 10);
+                glVertex3f( 60,  0, 10);
+                glVertex3f( 60,  0, 15);
+                glVertex3f( 60, -2, 15);
+
+                glVertex3f(-60,  0, 10);
+                glVertex3f(-60,  0, 15);
+                glVertex3f( 60,  0, 15);
+                glVertex3f( 60,  0, 10);
+            glEnd();
+        glPopMatrix();
+
+	 }
+	 else{
+
+        glPushMatrix();
+            glBegin(GL_QUADS);
+                glColor3f(0.2, 0.2, 0.2); //Desenha passeio
+                glVertex3f(-60, -2, -15);
+                glVertex3f(-60, -2, -20);
+                glVertex3f( 60, -2, -20);
+                glVertex3f( 60, -2, -15);
+
+                glVertex3f(-60, -2, -15);
+                glVertex3f(-60,  0, -15);
+                glVertex3f( 60,  0, -15);
+                glVertex3f( 60, -2, -15);
+
+                glVertex3f(-60, -2, -15);
+                glVertex3f(-60, -2, -20);
+                glVertex3f(-60,  0, -20);
+                glVertex3f(-60,  0, -15);
+
+                glVertex3f(-60, -2, -20);
+                glVertex3f( 60, -2, -20);
+                glVertex3f( 60,  0, -20);
+                glVertex3f(-60,  0, -20);
+
+                glVertex3f( 60, -2, -15);
+                glVertex3f( 60,  0, -15);
+                glVertex3f( 60,  0, -20);
+                glVertex3f( 60, -2, -20);
+
+                glVertex3f(-60,  0, -15);
+                glVertex3f(-60,  0, -20);
+                glVertex3f( 60,  0, -20);
+                glVertex3f( 60,  0, -15);
+            glEnd();
+        glPopMatrix();
+
+	 }
 
 //----------------------------------------------
 
